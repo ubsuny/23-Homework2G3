@@ -25,3 +25,4 @@ def calculate_trace(matrix):
 
     trace = np.trace(matrix)
     return trace
+```python
