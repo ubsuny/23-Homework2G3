@@ -26,3 +26,5 @@ def calculate_trace(matrix):
     trace = np.trace(matrix)
     return trace
 ```python
+
+# The calculate_trace function takes a NumPy array representing a square matrix as input. It first checks if the input matrix is square by comparing the number of rows and columns. If the matrix is not square, it raises a ValueError. Otherwise, it calculates the trace using NumPy's np.trace function and returns the result.
