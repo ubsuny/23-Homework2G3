@@ -1,0 +1,51 @@
+import numpy as np
+
+mat = [[2,1,1],[1,3,1],[1,1,4]] # Insert a square matrix
+
+
+rows,columns = np.shape(mat) # Save the number of rows and columns
+
+if  rows == columns:
+
+  trace = np.einsum('ii', mat) # Calculating Trace Using EinSum
+  print("Trace Using EinSum = ", trace)
+
+
+  trace = np.trace(mat) # Calculating Trace Using NumPy
+  print("Trace Using NumPy = ", trace)
+
+
+  trace = sum(mat[i][i] for i in range(len(mat))) # Calculating Trace Using List Comprehension
+  print("Trace Using List Comprehension = ", trace)
+
+  #Calculating Trace using For Loop
+  trace = 0
+  for j in range(len(mat)):
+    trace = trace + mat[j][j]
+  print("Trace Using For Loop = ", trace)
+
+  #Calculating Trace using While Loop
+
+  trace = 0
+  i=0
+
+  while i < len(mat):
+    trace = trace + mat[i][i]
+    i=i+1
+
+  print("Trace Using While Loop = ", trace)
+
+
+  # Calculating Trace using SymPy
+
+  from sympy import Matrix
+
+  matrix = Matrix(mat)
+
+  trace = matrix.trace()
+
+  print("Trace Using SymPy = ", trace)
+
+
+else:
+    print("The Matrix You Inserted Is Not Square. The Trace Operator is Only Defined For Square Matrices. Please Insert A Square Matrix")
