@@ -5,3 +5,6 @@
 
 - For time trace of 2*2, 3*3 and 2*3 matrices:
 ![unit test cases](cases.png)
+
+- For time trace of 10*10. 100*100, and 500*500 matrices:
+![higher_test_cases](higher_test_cases-1.png)
