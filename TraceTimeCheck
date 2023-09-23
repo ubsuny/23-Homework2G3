@@ -79,7 +79,7 @@ plt.bar(method, dt)
 # Adding labels and title
 plt.xlabel('Method')
 plt.ylabel('Time (s)')
-plt.title('Execution Time of a Program Calculating 3x3 Matrix')
+plt.title('Execution Time of a Program Calculating {}x{} Matrix'.format(rows,rows))
 
 # Display the plot
 plt.show()
