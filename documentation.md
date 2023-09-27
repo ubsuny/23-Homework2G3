@@ -242,7 +242,7 @@ if __name__ == '__main__':
 The TestTraceMethods class contains three test methods:
 
 - Test square matrix: This method tests one 2 × 2 matrix and one 3 × 3 matrix, with a known trace value. It use `self.assertEqual` to check if the calculated value matches the expected value. 
-- Test empty matrix: This method tests one empty matrix by using `self.assertEqual` to check id a `IndexError` is raised as expected.
+- Test empty matrix: This method tests one empty matrix by using `self.assertEqual` to check if a `IndexError` is raised as expected.
 - Test non square matrix: This method tests one non square matrix by using `self.assertEqual` to check id a `ValueError` is raised as expected.
 
 ### Output
@@ -256,6 +256,8 @@ For the above unit tests, we got the following outputs:
 
 ## Reference
 ChatGPT
+
 https://en.wikipedia.org/wiki/Trace_(linear_algebra)
+
 https://docs.python.org/3/library/time.html
 
