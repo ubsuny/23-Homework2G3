@@ -9,7 +9,7 @@ We use 8 methods to calculate the trace of a square matrix. We also compare the 
 6. SymPy 
 7. Recursion
 8. Eigenvalues
- 
+
 
 ## Trace of an array
 
@@ -201,14 +201,61 @@ record ending time as `t1` using `time.time()` functon
 
 Execution time varies each time
 
-
-
-
 ## Unit test
 
 
+We use the `unittest` module to create unit tests to verify the correctness of the `recursive_trace` function.
+
+
+```python
+import unittest
+import numpy as np
+from TraceTimeCheck import recursive_trace
+
+class TestTraceMethods(unittest.TestCase):
+    def test_recursive_trace(self):
+        # Test with a 2x2 matrix
+        matrix_2x2 = [[2, 1], [1, 3]]
+        expected_trace_2x2 = 5
+        result_2x2 = recursive_trace(matrix_2x2)
+        self.assertEqual(result_2x2, expected_trace_2x2)
+
+        # Test with a 3x3 matrix
+        matrix_3x3 = [[2, 1, 1], [1, 3, 1], [1, 1, 4]]
+        expected_trace_3x3 = 9
+        result_3x3 = recursive_trace(matrix_3x3)
+        self.assertEqual(result_3x3, expected_trace_3x3)
+
+        # Test with an empty matrix (should raise an error)
+        empty_matrix = []
+        with self.assertRaises(IndexError):
+            recursive_trace(empty_matrix)
+
+        # Test with a non-square matrix (should raise an error)
+        non_square_matrix = [[2, 1, 1], [1, 3, 1]]
+        with self.assertRaises(ValueError):
+            recursive_trace(non_square_matrix)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+The TestTraceMethods class contains three test methods:
+
+- Test square matrix: This method tests one 2 × 2 matrix and one 3 × 3 matrix, with a known trace value. It use `self.assertEqual` to check if the calculated value matches the expected value. 
+- Test empty matrix: This method tests one empty matrix by using `self.assertEqual` to check id a `IndexError` is raised as expected.
+- Test non square matrix: This method tests one non square matrix by using `self.assertEqual` to check id a `ValueError` is raised as expected.
+
+### Output
+
+For the above unit tests, we got the following outputs:
+- For the  2 × 2 square matrix, Tr(matrix_2x2)=5
+- For the  3 × 3 square matrix, Tr(matrix_3x3)=9
+- For the empty matrix, it returns `ValueError`
+- For the non square matrix, it returns `ValueError`
+
+
 ## Reference
-Wikipedia
+ChatGPT
 https://en.wikipedia.org/wiki/Trace_(linear_algebra)
 https://docs.python.org/3/library/time.html
 
