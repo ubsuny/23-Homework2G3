@@ -1,6 +1,6 @@
 # Compare the execution time of different implementations of matrix operations using Einstein notation: Trace of an array
 
-We use 8 methods to calculate the trace of a square matrix. We also compare the time for each method and visualized the execution time using a bar graph. 
+We use 8 methods to calculate the trace of a square matrix. We also compared the time for each method and visualized the execution time using a bar graph. 
 1. Einstein Summation Notation
 2. NumPy
 3. List Comprehension
@@ -22,18 +22,18 @@ import numpy as np
 ```
 import a library NumPy and name it to np
 
-NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+NumPy is a library for the Python programming language, adds support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
 
 ```python
 import time
 ```
 
-Import provides various time-related functions.
+provides various time-related functions.
 
 ```python
 import matplotlib as plt
 ```
-Import a library matplotlib.pyplot and name it to plt
+Import a library matplotlib.pyplot and name it as plt
 
 Matplotlib is a plotting library for the Python programming language and its numerical mathematics extension NumPy.
 
@@ -62,7 +62,7 @@ check if the matrix is a square matrix
 ```python
   t0 = time.time()
 ```
-record beginning time as `t0` using `time.time()` function by returning current time in seconds since the epoch (January 1, 1970)
+record beginning time as `t0` using `time.time()` function by returning the current time in seconds since the epoch (January 1, 1970)
 
 ```python
   trace = np.einsum('ii', mat) # Calculating Trace Using EinSum
@@ -74,10 +74,6 @@ call function `np.einsum` from `NumPy` to calculate trace using Einstein summati
 ```
 record ending time as `t1` using `time.time()` functon
 
-
-
-
-
 ### NumPy
 
 ```python
@@ -87,8 +83,8 @@ record ending time as `t1` using `time.time()` functon
   t3 = time.time()
 ```
 
-
 ### List Comprehension
+
 ```python
   t4 = time.time()
   trace = sum(mat[i][i] for i in range(len(mat))) # Calculating Trace Using List Comprehension
@@ -96,9 +92,7 @@ record ending time as `t1` using `time.time()` functon
   t5 = time.time()
 ```
 
-
 ### For Loop
-
 
 ```python
   t6 = time.time()
@@ -108,8 +102,6 @@ record ending time as `t1` using `time.time()` functon
   print("Trace Using For Loop = ", trace)
   t7 = time.time()
 ```
-
-
 
 ### While Loop
 
@@ -125,8 +117,6 @@ record ending time as `t1` using `time.time()` functon
   print("Trace Using While Loop = ", trace)
   t9 = time.time()
 ```
-
-
 
 ### SymPy
 
@@ -150,8 +140,6 @@ record ending time as `t1` using `time.time()` functon
   t13 = time.time()
   print("Trace Using Recursion = ", trace)
 ```
-
-
 
 ### Eigenvalues
 
@@ -185,24 +173,20 @@ record ending time as `t1` using `time.time()` functon
   plt.show()
 ```
 
-
 ## Execution Time of a Program Calculating Trace of a square Matrix
 
 ![Execution Time of a Program Calculating Trace of a square Matrix](Execution%20Time.png)
 
 
-
-
 - EinSum is the slowest
 - SymPy is the second slowest
-- NumPy, List Comprehension, For Loop, and While Loop take similar time
-- Eigenvalues is the second fastest
+- NumPy, List Comprehension, For Loop, and While Loop take a similar time
+- Eigenvalues is the second-fastest
 - Recursion is the fastest
 
 Execution time varies each time
 
 ## Unit test
-
 
 We use the `unittest` module to create unit tests to verify the correctness of the `recursive_trace` function.
 
@@ -241,9 +225,9 @@ if __name__ == '__main__':
 ```
 The TestTraceMethods class contains three test methods:
 
-- Test square matrix: This method tests one 2 × 2 matrix and one 3 × 3 matrix, with a known trace value. It use `self.assertEqual` to check if the calculated value matches the expected value. 
-- Test empty matrix: This method tests one empty matrix by using `self.assertEqual` to check if a `IndexError` is raised as expected.
-- Test non square matrix: This method tests one non square matrix by using `self.assertEqual` to check id a `ValueError` is raised as expected.
+- Test square matrix: This method tests one 2 × 2 matrix and one 3 × 3 matrix, with a known trace value. It uses `self.assertEqual` to check if the calculated value matches the expected value. 
+- Test empty matrix: This method tests one empty matrix by using `self.assertEqual` to check if `IndexError` is raised as expected.
+- Test non-square matrix: This method tests one non-square matrix by using `self.assertEqual` to check if `ValueError` is raised as expected.
 
 ### Output
 
@@ -251,7 +235,7 @@ For the above unit tests, we got the following outputs:
 - For the  2 × 2 square matrix, Tr(matrix_2x2)=5
 - For the  3 × 3 square matrix, Tr(matrix_3x3)=9
 - For the empty matrix, it returns `ValueError`
-- For the non square matrix, it returns `ValueError`
+- For the non-square matrix, it returns `ValueError`
 
 
 ## Reference
